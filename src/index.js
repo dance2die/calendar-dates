@@ -31,13 +31,21 @@ function getCalendarDates(date) {
   console.log(`prevMonthDates=${prevMonthDates}`);
   result.push(prevMonthDates);
 
-  // // Get Current Month's Dates
-  // const currMonthDates = getCurrentMonthDates(month);
-  // result.push(currMonthDates);
+  // Get Current Month's Dates
+  const currMonthDates = getCurrentMonthDates(date);
+  console.log(`currMonthDates=${currMonthDates}`);
+  result.push(currMonthDates);
 
   // // Get Next Month's Dates
-  // const nextMonthDates = getNextMonthDates(month);
+  // const nextMonthDates = getNextMonthDates(date);
   // result.push(nextMonthDates);
+}
+
+function getCurrentMonthDates(date) {
+  const lastDate = getLastDate(date);
+  return Array(lastDate)
+    .fill()
+    .map((_, i) => i + 1);
 }
 
 function getPreviousMonthDates(date) {
@@ -53,7 +61,7 @@ function getPreviousMonthDates(date) {
 
   return Array(length)
     .fill()
-    .map((e, i) => start + i);
+    .map((_, i) => start + i);
 }
 
 function getLastDate(date) {
