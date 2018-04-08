@@ -20,25 +20,34 @@ function main() {
   // setInnerContent("<h1>hi!</h1>");
   // 8/1/2018
   const dates = getCalendarDates(new Date(2018, 7, 1));
+  let content = "";
+  for (let i = 0; i < 42; i++) {
+    if (i % 7 === 0 && i !== 0) content += `<br />`;
+    content += `${dates[i]} `;
+  }
+  setInnerContent(content);
 }
 
 function getCalendarDates(date) {
-  l(`date=${date}`);
-  const result = [];
+  let result = [];
 
-  // Get Previous Month's Dates
   const prevMonthDates = getPreviousMonthDates(date);
-  console.log(`prevMonthDates=${prevMonthDates}`);
-  result.push(prevMonthDates);
-
-  // Get Current Month's Dates
   const currMonthDates = getCurrentMonthDates(date);
-  console.log(`currMonthDates=${currMonthDates}`);
-  result.push(currMonthDates);
+  result = result.concat(prevMonthDates).concat(currMonthDates);
 
-  // // Get Next Month's Dates
-  // const nextMonthDates = getNextMonthDates(date);
-  // result.push(nextMonthDates);
+  const nextMonthDates = getNextMonthDates(date, result.length);
+  result = result.concat(nextMonthDates);
+
+  return result;
+}
+
+function getNextMonthDates(date, daysSoFar) {
+  // 7 days * 6 rows (in a calendar)
+  const totalDays = 42; // not the answer to all questions.
+  const length = totalDays - daysSoFar;
+  return Array(length)
+    .fill()
+    .map((_, i) => i + 1);
 }
 
 function getCurrentMonthDates(date) {
