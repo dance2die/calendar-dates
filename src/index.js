@@ -2,11 +2,11 @@ class CalendarDates {
   getDates(date) {
     let result = [];
 
-    const prevMonthDates = getPreviousDates(date);
-    const currMonthDates = getCurrentDates(date);
+    const prevMonthDates = this.getPreviousDates(date);
+    const currMonthDates = this.getCurrentDates(date);
     result = result.concat(prevMonthDates).concat(currMonthDates);
 
-    const nextMonthDates = getNextDates(date, result.length);
+    const nextMonthDates = this.getNextDates(date, result.length);
     result = result.concat(nextMonthDates);
 
     return result;
