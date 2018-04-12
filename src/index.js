@@ -1,5 +1,5 @@
 class CalendarDates {
-  getCalendarDates(date) {
+  getDates(date) {
     let result = [];
 
     const prevMonthDates = getPreviousMonthDates(date);
@@ -12,14 +12,14 @@ class CalendarDates {
     return result;
   }
 
-  getCurrentMonthDates(date) {
+  getCurrentDates(date) {
     const lastDate = getLastDate(date);
     return Array(lastDate)
       .fill()
       .map((_, i) => i + 1);
   }
 
-  getPreviousMonthDates(date) {
+  getPreviousDates(date) {
     const month = date.getMonth();
     const year = date.getFullYear();
     const prevMonth = Math.min(month - 1, 11);
@@ -35,7 +35,7 @@ class CalendarDates {
       .map((_, i) => start + i);
   }
 
-  getNextMonthDates(date, daysSoFar) {
+  getNextDates(date, daysSoFar) {
     // 7 days * 6 rows (in a calendar)
     const totalDays = 42; // not the answer to all questions.
     const length = totalDays - daysSoFar;
