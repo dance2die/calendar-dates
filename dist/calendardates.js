@@ -1,4 +1,8 @@
-export function getCalendarDates(date) {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function getCalendarDates(date) {
   let result = [];
 
   const prevMonthDates = getPreviousMonthDates(date);
@@ -11,14 +15,14 @@ export function getCalendarDates(date) {
   return result;
 }
 
-export function getCurrentMonthDates(date) {
+function getCurrentMonthDates(date) {
   const lastDate = getLastDate(date);
   return Array(lastDate)
     .fill()
     .map((_, i) => i + 1);
 }
 
-export function getPreviousMonthDates(date) {
+function getPreviousMonthDates(date) {
   const month = date.getMonth();
   const year = date.getFullYear();
   const prevMonth = Math.min(month - 1, 11);
@@ -34,7 +38,7 @@ export function getPreviousMonthDates(date) {
     .map((_, i) => start + i);
 }
 
-export function getNextMonthDates(date, daysSoFar) {
+function getNextMonthDates(date, daysSoFar) {
   // 7 days * 6 rows (in a calendar)
   const totalDays = 42; // not the answer to all questions.
   const length = totalDays - daysSoFar;
@@ -54,3 +58,8 @@ function getFirstDayIndex(date) {
     .substring(0, 3);
   return dayNames.indexOf(firstDay);
 }
+
+exports.getCalendarDates = getCalendarDates;
+exports.getCurrentMonthDates = getCurrentMonthDates;
+exports.getPreviousMonthDates = getPreviousMonthDates;
+exports.getNextMonthDates = getNextMonthDates;

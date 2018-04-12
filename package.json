@@ -1,14 +1,24 @@
 {
-  "name": "parcel-sandbox",
+  "name": "calendar-dates",
   "version": "1.0.0",
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "rollup -c"
   },
   "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dance2die/throwaway.CalendarDates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dance2die/throwaway.CalendarDates/issues"
+  },
+  "homepage": "https://github.com/dance2die/throwaway.CalendarDates#readme"
 }
