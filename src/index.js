@@ -1,46 +1,48 @@
-export function getCalendarDates(date) {
-  let result = [];
+class CalendarDates {
+  getCalendarDates(date) {
+    let result = [];
 
-  const prevMonthDates = getPreviousMonthDates(date);
-  const currMonthDates = getCurrentMonthDates(date);
-  result = result.concat(prevMonthDates).concat(currMonthDates);
+    const prevMonthDates = getPreviousMonthDates(date);
+    const currMonthDates = getCurrentMonthDates(date);
+    result = result.concat(prevMonthDates).concat(currMonthDates);
 
-  const nextMonthDates = getNextMonthDates(date, result.length);
-  result = result.concat(nextMonthDates);
+    const nextMonthDates = getNextMonthDates(date, result.length);
+    result = result.concat(nextMonthDates);
 
-  return result;
-}
+    return result;
+  }
 
-export function getCurrentMonthDates(date) {
-  const lastDate = getLastDate(date);
-  return Array(lastDate)
-    .fill()
-    .map((_, i) => i + 1);
-}
+  getCurrentMonthDates(date) {
+    const lastDate = getLastDate(date);
+    return Array(lastDate)
+      .fill()
+      .map((_, i) => i + 1);
+  }
 
-export function getPreviousMonthDates(date) {
-  const month = date.getMonth();
-  const year = date.getFullYear();
-  const prevMonth = Math.min(month - 1, 11);
-  const prevDate = new Date(year, prevMonth);
+  getPreviousMonthDates(date) {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const prevMonth = Math.min(month - 1, 11);
+    const prevDate = new Date(year, prevMonth);
 
-  const prevMonthLastDate = getLastDate(prevDate);
-  const firstDayIndex = getFirstDayIndex(date);
-  const start = prevMonthLastDate - firstDayIndex + 1;
-  const length = prevMonthLastDate - start + 1;
+    const prevMonthLastDate = getLastDate(prevDate);
+    const firstDayIndex = getFirstDayIndex(date);
+    const start = prevMonthLastDate - firstDayIndex + 1;
+    const length = prevMonthLastDate - start + 1;
 
-  return Array(length)
-    .fill()
-    .map((_, i) => start + i);
-}
+    return Array(length)
+      .fill()
+      .map((_, i) => start + i);
+  }
 
-export function getNextMonthDates(date, daysSoFar) {
-  // 7 days * 6 rows (in a calendar)
-  const totalDays = 42; // not the answer to all questions.
-  const length = totalDays - daysSoFar;
-  return Array(length)
-    .fill()
-    .map((_, i) => i + 1);
+  getNextMonthDates(date, daysSoFar) {
+    // 7 days * 6 rows (in a calendar)
+    const totalDays = 42; // not the answer to all questions.
+    const length = totalDays - daysSoFar;
+    return Array(length)
+      .fill()
+      .map((_, i) => i + 1);
+  }
 }
 
 function getLastDate(date) {
@@ -54,3 +56,5 @@ function getFirstDayIndex(date) {
     .substring(0, 3);
   return dayNames.indexOf(firstDay);
 }
+
+export default CalendarDates;
