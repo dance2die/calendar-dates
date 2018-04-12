@@ -1,9 +1,10 @@
 {
   "name": "calendar-dates",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "author": "Sung Kim",
-  "main": "dist/calendardates.js",
+  "main": "dist/calendardates.cjs.js",
+  "module ": "dist/calendardates.esm.js",
   "description":
     "Get calendar dates for a given month - Mostly for creating a custom calendar control",
   "scripts": {
@@ -15,7 +16,8 @@
     "parcel-bundler": "^1.6.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
   },
   "repository": {
     "type": "git",
