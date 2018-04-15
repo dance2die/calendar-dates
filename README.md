@@ -23,9 +23,11 @@ const calendarDates = new CalendarDates();
 
 const l = console.log;
 
-// const dates = calendarDates.getDates(new Date());
-l(calendarDates.getDates(new Date()).join(","));
-l(calendarDates.getDates(new Date(2018, 2)).join(","));
+l(`April, 2018 = ${calendarDates.getDates(new Date(2018, 3)).join(",")}`);
+l(calendarDates.getDateMatrix(new Date(2018, 3)));
+
+l(`May, 2018 = ${calendarDates.getDates(new Date(2018, 4)).join(",")}`);
+l(calendarDates.getDateMatrix(new Date(2018, 4)));
 ```
 
 ##### Result
@@ -33,6 +35,18 @@ l(calendarDates.getDates(new Date(2018, 2)).join(","));
 ```bash
 dance2die@CC c:\misc\sources\throwaway\calendartest
 > node index.js
-1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12
-25,26,27,28,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7
+April, 2018 = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,1,2,3,4,5,6,7,8,9,10,11,12
+[ [ 1, 2, 3, 4, 5, 6, 7 ],
+  [ 8, 9, 10, 11, 12, 13, 14 ],
+  [ 15, 16, 17, 18, 19, 20, 21 ],
+  [ 22, 23, 24, 25, 26, 27, 28 ],
+  [ 29, 30, 1, 2, 3, 4, 5 ],
+  [ 6, 7, 8, 9, 10, 11, 12 ] ]
+May, 2018 = 29,30,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,1,2,3,4,5,6,7,8,9
+[ [ 29, 30, 1, 2, 3, 4, 5 ],
+  [ 6, 7, 8, 9, 10, 11, 12 ],
+  [ 13, 14, 15, 16, 17, 18, 19 ],
+  [ 20, 21, 22, 23, 24, 25, 26 ],
+  [ 27, 28, 29, 30, 31, 1, 2 ],
+  [ 3, 4, 5, 6, 7, 8, 9 ] ]
 ```
