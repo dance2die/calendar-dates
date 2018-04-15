@@ -13,7 +13,7 @@ export default {
     },
     {
       file: "dist/calendardates.esm.js",
-      format: "cjs",
+      format: "es",
       name: "calendar-dates"
     }
   ],
