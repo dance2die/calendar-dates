@@ -1,4 +1,18 @@
 class CalendarDates {
+  getDateMatrix(date) {
+    const dates = this.getDates(date);
+    const daysInAWeek = 7; // 7 days in a week.
+
+    // https://stackoverflow.com/a/39838921/4035
+    return dates.reduce(
+      (rows, key, index) =>
+        (index % daysInAWeek === 0
+          ? rows.push([key])
+          : rows[rows.length - 1].push(key)) && rows,
+      []
+    );
+  }
+
   getDates(date) {
     let result = [];
 
