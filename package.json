@@ -1,6 +1,6 @@
 {
   "name": "calendar-dates",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "author": "Sung Kim",
   "main": "dist/calendardates.cjs.js",
@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dance2die/throwaway.CalendarDates.git"
+    "url": "https://github.com/dance2die/calendar-dates.git"
   },
   "keywords": ["calendar", "library"],
   "bugs": {
-    "url": "https://github.com/dance2die/throwaway.CalendarDates/issues"
+    "url": "https://github.com/dance2die/calendar-dates/issues"
   },
-  "homepage": "https://github.com/dance2die/throwaway.CalendarDates#readme"
+  "homepage": "https://github.com/dance2die/calendar-dates#readme"
 }
