@@ -3,9 +3,8 @@
 Get a list of calendar dates.  
 This is to be used mainly for Calendar control developers.
 
-This library is not yet tested.  
-Very Alpha-ish release.  
-I will be adding some tests while learning Jest later on.
+This library is tested but is a very Alpha-ish release.  
+I will be adding more tests while learning Jest later on.
 
 ### Installation
 
