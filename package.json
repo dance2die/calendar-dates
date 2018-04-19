@@ -8,12 +8,13 @@
   "description":
     "Get calendar dates for a given month - Mostly for creating a custom calendar control",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
-    "parcel-bundler": "^1.6.1",
+    "jest": "^22.4.3",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
