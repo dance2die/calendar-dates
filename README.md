@@ -1,6 +1,8 @@
 ### What is this?
 
 Get a list of calendar dates.  
+**WITHOUT an External Dependency**
+
 This is to be used mainly for Calendar control developers.
 
 This library is tested but is a very Alpha-ish release.  
