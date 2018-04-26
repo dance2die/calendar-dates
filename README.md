@@ -120,3 +120,10 @@ f5e330e6f0c6cbbb077bf2a2385cc536.js:90:1
 length: 6
 __proto__: Array []
 ```
+
+### To Do
+- Add an asynchronous version of each public method (returning promises, easier with async/await).
+  - getDatesAsync
+  - getDateMatrixAsync
+  - etc.
+ 
