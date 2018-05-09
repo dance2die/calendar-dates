@@ -135,3 +135,9 @@ f5e330e6f0c6cbbb077bf2a2385cc536.js:90:1
 length: 6
 __proto__: Array []
 ```
+
+### Changelog
+
+1.0.0
+
+* Added "\*Async" versions
