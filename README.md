@@ -25,15 +25,30 @@ const CalendarDates = require("calendar-dates");
 const calendarDates = new CalendarDates();
 
 const l = console.log;
+const april2018 = new Date(2018, 3);
+const may2018 = new Date(2018, 4);
 
-l(`April, 2018 = ${calendarDates.getDates(new Date(2018, 3)).join(",")}`);
-l(calendarDates.getDateMatrix(new Date(2018, 3)));
+// Synchronous version
+l(`April, 2018 = ${calendarDates.getDates(april2018).join(",")}`);
+l(calendarDates.getDateMatrix(april2018));
 
-l(`May, 2018 = ${calendarDates.getDates(new Date(2018, 4)).join(",")}`);
+l(`May, 2018 = ${calendarDates.getDates(may2018).join(",")}`);
 l(calendarDates.getDateMatrix(new Date(2018, 4)));
+
+
+// Asynchronous version
+calendarDates.getDatesAsync(april2018).then(dates =>
+  l(`April, 2018 = ${dates.join(",")});
+);
+calendarDates.getDateMatrix(april2018).then(matrix => l(matrix));
+
+calendarDates.getDatesAsync(may2018).then(dates =>
+  l(`May, 2018 = ${dates.join(",")});
+);
+calendarDates.getDateMatrix(may2018).then(matrix => l(matrix));
 ```
 
-##### Result
+##### Result (for both sync/async versions)
 
 ```bash
 dance2die@CC c:\misc\sources\throwaway\calendartest
@@ -120,10 +135,3 @@ f5e330e6f0c6cbbb077bf2a2385cc536.js:90:1
 length: 6
 __proto__: Array []
 ```
-
-### To Do
-- Add an asynchronous version of each public method (returning promises, easier with async/await).
-  - getDatesAsync
-  - getDateMatrixAsync
-  - etc.
- 

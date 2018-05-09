@@ -1,6 +1,6 @@
 {
   "name": "calendar-dates",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "MIT",
   "author": "Sung Kim",
   "main": "dist/calendardates.cjs.js",
@@ -9,12 +9,15 @@
     "Get calendar dates for a given month - Mostly for creating a custom calendar control",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest"
+    "test": "yarn build && jest"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
