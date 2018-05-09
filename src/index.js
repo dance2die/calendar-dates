@@ -13,6 +13,10 @@ class CalendarDates {
     );
   }
 
+  async getDateMatrixAsync(date) {
+    return this.getDateMatrix(date);
+  }
+
   getDates(date) {
     let result = [];
 
@@ -26,11 +30,19 @@ class CalendarDates {
     return result;
   }
 
+  async getDatesAsync(date) {
+    return this.getDates(date);
+  }
+
   getCurrentDates(date) {
     const lastDate = getLastDate(date);
     return Array(lastDate)
       .fill()
       .map((_, i) => i + 1);
+  }
+
+  async getCurrentDatesAsync(date) {
+    return this.getCurrentDates(date);
   }
 
   getPreviousDates(date) {
@@ -49,6 +61,10 @@ class CalendarDates {
       .map((_, i) => start + i);
   }
 
+  async getPreviousDatesAsync(date) {
+    return this.getPreviousDates(date);
+  }
+
   getNextDates(date, daysSoFar) {
     // 7 days * 6 rows (in a calendar)
     const totalDays = 42; // not the answer to all questions.
@@ -56,6 +72,10 @@ class CalendarDates {
     return Array(length)
       .fill()
       .map((_, i) => i + 1);
+  }
+
+  async getNextDatesAsync(date, daysSoFar) {
+    return this.getNextDates(date, daysSoFar);
   }
 }
 
