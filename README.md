@@ -1,12 +1,9 @@
 ### What is this?
 
 Get a list of calendar dates.  
-**WITHOUT an External Dependency**
+**without an External Dependency**
 
-This is to be used mainly for Calendar control developers.
-
-This library is tested but is a very Alpha-ish release.  
-I will be adding more tests while learning Jest later on.
+You can use this to create your own calendar controls
 
 ### Installation
 
