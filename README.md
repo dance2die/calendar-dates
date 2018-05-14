@@ -10,6 +10,8 @@ You can use this to create your own calendar controls
 ```bash
 npm i calendar-dates
 # or
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates?ref=badge_shield)
+
 yarn add calendar-dates
 ```
 
@@ -138,3 +140,7 @@ __proto__: Array []
 1.0.0
 
 * Added "\*Async" versions
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates?ref=badge_large)
