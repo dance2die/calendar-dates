@@ -19,10 +19,10 @@ export default {
   ],
   plugins: [
     resolve(),
-    commonjs(),
-    uglify(),
     babel({
       exclude: "node_modules/**"
-    })
+    }),
+    commonjs(),
+    uglify()
   ]
 };

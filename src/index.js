@@ -1,4 +1,16 @@
 class CalendarDates {
+  // @TODO: Add following methods
+  // 1. getDatesWithMetadata
+  // 2. getDatesWithMetadataAsync
+  // 3. getDateMatrixWithMetadata
+  // 4. getDateMatrixWithMetadataAsync
+
+  static monthTypes = {
+    PREVIOUS: "previous",
+    CURRENT: "current",
+    NEXT: "next"
+  };
+
   getDateMatrix(date) {
     const dates = this.getDates(date);
     const daysInAWeek = 7; // 7 days in a week.
@@ -25,6 +37,28 @@ class CalendarDates {
     result = result.concat(prevMonthDates).concat(currMonthDates);
 
     const nextMonthDates = this.getNextDates(date, result.length);
+    result = result.concat(nextMonthDates);
+
+    return result;
+  }
+
+  getDatesWithMetadata(date) {
+    let result = [];
+
+    const prevMonthDates = this.getPreviousDates(date).map(date => ({
+      date,
+      type: CalendarDates.monthTypes.PREVIOUS
+    }));
+    const currMonthDates = this.getCurrentDates(date).map(date => ({
+      date,
+      type: CalendarDates.monthTypes.CURRENT
+    }));
+    result = result.concat(prevMonthDates).concat(currMonthDates);
+
+    const nextMonthDates = this.getNextDates(date, result.length).map(date => ({
+      date,
+      type: CalendarDates.monthTypes.NEXT
+    }));
     result = result.concat(nextMonthDates);
 
     return result;
