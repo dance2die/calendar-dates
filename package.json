@@ -5,8 +5,7 @@
   "author": "Sung Kim",
   "main": "dist/calendardates.cjs.js",
   "module ": "dist/calendardates.esm.js",
-  "description":
-    "Get calendar dates for a given month - Mostly for creating a custom calendar control",
+  "description": "Get calendar dates for a given month - Mostly for creating a custom calendar control",
   "scripts": {
     "build": "rollup -c",
     "test": "yarn build && jest"
@@ -16,19 +15,25 @@
     "babel-jest": "^22.4.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "jest": "^22.4.3",
     "regenerator-runtime": "^0.11.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-regenerator-runtime": "^6.23.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dance2die/calendar-dates.git"
   },
-  "keywords": ["calendar", "library"],
+  "keywords": [
+    "calendar",
+    "library"
+  ],
   "bugs": {
     "url": "https://github.com/dance2die/calendar-dates/issues"
   },

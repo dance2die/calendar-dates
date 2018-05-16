@@ -1,4 +1,17 @@
 {
   "presets": [["env", { "modules": false }]],
-  "plugins": ["external-helpers", "transform-class-properties"]
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties",
+    "transform-regenerator",
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "rollup-regenerator-runtime"
+      }
+    ]
+  ]
 }
