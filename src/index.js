@@ -1,10 +1,4 @@
 class CalendarDates {
-  // @TODO: Add following methods
-  // ✅ 1. getDatesWithMetadata
-  // ✅ 2. getDatesWithMetadataAsync
-  // 3. getDateMatrixWithMetadata
-  // 4. getDateMatrixWithMetadataAsync
-
   static monthTypes = {
     PREVIOUS: "previous",
     CURRENT: "current",
@@ -41,6 +35,10 @@ class CalendarDates {
           : rows[rows.length - 1].push(key)) && rows,
       []
     );
+  }
+
+  async getDateMatrixWithMetadataAsync(date) {
+    return this.getDateMatrixWithMetadata(date);
   }
 
   getDates(date) {
