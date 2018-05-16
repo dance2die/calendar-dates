@@ -1,7 +1,7 @@
 class CalendarDates {
   // @TODO: Add following methods
-  // 1. getDatesWithMetadata
-  // 2. getDatesWithMetadataAsync
+  // ✅ 1. getDatesWithMetadata
+  // ✅ 2. getDatesWithMetadataAsync
   // 3. getDateMatrixWithMetadata
   // 4. getDateMatrixWithMetadataAsync
 
@@ -27,6 +27,20 @@ class CalendarDates {
 
   async getDateMatrixAsync(date) {
     return this.getDateMatrix(date);
+  }
+
+  getDateMatrixWithMetadata(date) {
+    const dates = this.getDatesWithMetadata(date);
+    const daysInAWeek = 7; // 7 days in a week.
+
+    // https://stackoverflow.com/a/39838921/4035
+    return dates.reduce(
+      (rows, key, index) =>
+        (index % daysInAWeek === 0
+          ? rows.push([key])
+          : rows[rows.length - 1].push(key)) && rows,
+      []
+    );
   }
 
   getDates(date) {
