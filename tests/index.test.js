@@ -42,10 +42,9 @@ test("Dates with Metadata for April of 2018", () => {
     {date: 6, type: 'next'}, {date: 7, type: 'next'}, {date: 8, type: 'next'}, {date: 9, type: 'next'}, {date: 10, type: 'next'}, {date: 11, type: 'next'}, {date: 12, type: 'next'}];
   expect(actual).toEqual(expected);
 
-  // // https://facebook.github.io/jest/docs/en/asynchronous.html#promises
-  // return sut
-  //   .getDatesAsync(april2018)
-  //   .then(actual => expect(actual).toEqual(expected));
+  return sut
+    .getDatesWithMetadataAsync(april2018)
+    .then(actual => expect(actual).toEqual(expected));
 });
 
 test("Dates with Metadata for May of 2018", () => {
@@ -61,10 +60,9 @@ test("Dates with Metadata for May of 2018", () => {
   ];
   expect(actual).toEqual(expected);
 
-  // // https://facebook.github.io/jest/docs/en/asynchronous.html#promises
-  // return sut
-  //   .getDatesAsync(april2018)
-  //   .then(actual => expect(actual).toEqual(expected));
+  return sut
+    .getDatesWithMetadataAsync(may2018)
+    .then(actual => expect(actual).toEqual(expected));
 });
 
 test("Date Matrix for April of 2018", () => {

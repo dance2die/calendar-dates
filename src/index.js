@@ -33,6 +33,10 @@ class CalendarDates {
     return this.getDatesWithMetadata(date).map(metadata => metadata.date);
   }
 
+  async getDatesAsync(date) {
+    return this.getDates(date);
+  }
+
   getDatesWithMetadata(date) {
     let result = [];
 
@@ -55,8 +59,8 @@ class CalendarDates {
     return result;
   }
 
-  async getDatesAsync(date) {
-    return this.getDates(date);
+  async getDatesWithMetadataAsync(date) {
+    return this.getDatesWithMetadata(date);
   }
 
   getCurrentDates(date) {
