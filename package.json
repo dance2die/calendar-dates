@@ -1,11 +1,12 @@
 {
   "name": "calendar-dates",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "author": "Sung Kim",
   "main": "dist/calendardates.cjs.js",
   "module ": "dist/calendardates.esm.js",
-  "description": "Get calendar dates for a given month - Mostly for creating a custom calendar control",
+  "description":
+    "Get calendar dates for a given month - Mostly for creating a custom calendar control",
   "scripts": {
     "build": "rollup -c",
     "test": "yarn build && jest"
@@ -30,10 +31,7 @@
     "type": "git",
     "url": "https://github.com/dance2die/calendar-dates.git"
   },
-  "keywords": [
-    "calendar",
-    "library"
-  ],
+  "keywords": ["calendar", "library", "date", "year", "month", "day", "matrix"],
   "bugs": {
     "url": "https://github.com/dance2die/calendar-dates/issues"
   },
