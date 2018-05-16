@@ -1,10 +1,4 @@
 class CalendarDates {
-  // @TODO: Add following methods
-  // 1. getDatesWithMetadata
-  // 2. getDatesWithMetadataAsync
-  // 3. getDateMatrixWithMetadata
-  // 4. getDateMatrixWithMetadataAsync
-
   static monthTypes = {
     PREVIOUS: "previous",
     CURRENT: "current",
@@ -29,17 +23,30 @@ class CalendarDates {
     return this.getDateMatrix(date);
   }
 
+  getDateMatrixWithMetadata(date) {
+    const dates = this.getDatesWithMetadata(date);
+    const daysInAWeek = 7; // 7 days in a week.
+
+    // https://stackoverflow.com/a/39838921/4035
+    return dates.reduce(
+      (rows, key, index) =>
+        (index % daysInAWeek === 0
+          ? rows.push([key])
+          : rows[rows.length - 1].push(key)) && rows,
+      []
+    );
+  }
+
+  async getDateMatrixWithMetadataAsync(date) {
+    return this.getDateMatrixWithMetadata(date);
+  }
+
   getDates(date) {
-    let result = [];
+    return this.getDatesWithMetadata(date).map(metadata => metadata.date);
+  }
 
-    const prevMonthDates = this.getPreviousDates(date);
-    const currMonthDates = this.getCurrentDates(date);
-    result = result.concat(prevMonthDates).concat(currMonthDates);
-
-    const nextMonthDates = this.getNextDates(date, result.length);
-    result = result.concat(nextMonthDates);
-
-    return result;
+  async getDatesAsync(date) {
+    return this.getDates(date);
   }
 
   getDatesWithMetadata(date) {
@@ -64,8 +71,8 @@ class CalendarDates {
     return result;
   }
 
-  async getDatesAsync(date) {
-    return this.getDates(date);
+  async getDatesWithMetadataAsync(date) {
+    return this.getDatesWithMetadata(date);
   }
 
   getCurrentDates(date) {
