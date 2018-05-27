@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/calendar-dates.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/calendar-dates/)
+
 ### What is this?
 
 Get a list of calendar dates.  
