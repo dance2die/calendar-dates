@@ -5,46 +5,57 @@ const monthTypes = {
 };
 
 class CalendarDates {
-  async getDates(date) {
-    const dates = await getDatesWithMetadata(date);
-    return dates.map(metadata => metadata);
+  getDates(date) {
+    return new Promise(resolve =>
+      resolve(
+        getDatesWithMetadata(date).then(dates =>
+          dates.map(metadata => metadata)
+        )
+      )
+    );
   }
 
-  async getMatrix(date) {
-    const dates = await getDatesWithMetadata(date);
+  getMatrix(date) {
     const daysInAWeek = 7; // 7 days in a week.
 
     // https://stackoverflow.com/a/39838921/4035
-    return dates.reduce(
-      (rows, key, index) =>
-        (index % daysInAWeek === 0
-          ? rows.push([key])
-          : rows[rows.length - 1].push(key)) && rows,
-      []
-    );
+    return new Promise(resolve => {
+      resolve(
+        getDatesWithMetadata(date).then(dates =>
+          dates.reduce(
+            (rows, key, index) =>
+              (index % daysInAWeek === 0
+                ? rows.push([key])
+                : rows[rows.length - 1].push(key)) && rows,
+            []
+          )
+        )
+      );
+    });
   }
 }
 
-async function getDatesWithMetadata(date) {
-  let result = [];
+function getDatesWithMetadata(date) {
+  return new Promise(resolve => {
+    let result = [];
 
-  const prevMonthDates = getPreviousDates(date).map(date => ({
-    date,
-    type: monthTypes.PREVIOUS
-  }));
-  const currMonthDates = getCurrentDates(date).map(date => ({
-    date,
-    type: monthTypes.CURRENT
-  }));
-  result = result.concat(prevMonthDates).concat(currMonthDates);
+    const previousDates = getPreviousDates(date).map(date => ({
+      date,
+      type: monthTypes.PREVIOUS
+    }));
+    const currentDates = getCurrentDates(date).map(date => ({
+      date,
+      type: monthTypes.CURRENT
+    }));
+    result = result.concat(previousDates).concat(currentDates);
 
-  const nextMonthDates = getNextDates(date, result.length).map(date => ({
-    date,
-    type: monthTypes.NEXT
-  }));
-  result = result.concat(nextMonthDates);
+    const nextDates = getNextDates(date, result.length).map(date => ({
+      date,
+      type: monthTypes.NEXT
+    }));
 
-  return result;
+    resolve(result.concat(nextDates));
+  });
 }
 
 function getCurrentDates(date) {
