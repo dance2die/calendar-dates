@@ -56,34 +56,8 @@ function getDateMatrix(date) {
   );
 }
 
-async function getDateMatrixAsync(date) {
-  return getDateMatrix(date);
-}
-
-function getDateMatrixWithMetadata(date) {
-  const dates = getDatesWithMetadata(date);
-  const daysInAWeek = 7; // 7 days in a week.
-
-  // https://stackoverflow.com/a/39838921/4035
-  return dates.reduce(
-    (rows, key, index) =>
-      (index % daysInAWeek === 0
-        ? rows.push([key])
-        : rows[rows.length - 1].push(key)) && rows,
-    []
-  );
-}
-
-async function getDateMatrixWithMetadataAsync(date) {
-  return getDateMatrixWithMetadata(date);
-}
-
 function getDates(date) {
   return getDatesWithMetadata(date).map(metadata => metadata.date);
-}
-
-async function getDatesAsync(date) {
-  return getDates(date);
 }
 
 function getDatesWithMetadata(date) {
