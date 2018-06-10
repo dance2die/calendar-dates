@@ -17,14 +17,17 @@ yarn add calendar-dates
 
 ## API
 
-1.  getDates(date)
-    - returns an array of objects in `{date: <date>, type: <type>}` format
-    - `<date>` - month day number
-    - `<type>` - `previous`, `current`, or `next` month date.
-    - ![date type](images/getdate_result.png)
-1.  getMatrix(date)
-    - Same data as `getDates` but returns an array of 6 arrays of 7 elements (as in a calendar)
-    - ![date type](images/getmatrix_result.png)
+### getDates(date)
+
+- returns an array of objects in `{date: <date>, type: <type>}` format
+- `<date>` - month day number
+- `<type>` - Metadata to show if is `previous`, `current`, or `next` month date.
+- ![date type](images/getdate_result.png)
+
+### getMatrix(date)
+
+- Same data as `getDates` but returns an array of 6 arrays of 7 elements (as in a calendar)
+- ![date type](images/getmatrix_result.png)
 
 ## Examples
 
@@ -128,7 +131,7 @@ const main = async () => {
 main();
 ```
 
-### Result
+#### Result
 
 In a browser.
 
@@ -181,4 +184,5 @@ Added `*WithMetadata` methods
 
 ## License
 
+[MIT](https://github.com/dance2die/calendar-dates/blob/master/LICENSE)  
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates?ref=badge_large)
