@@ -6,25 +6,7 @@ const monthTypes = {
 
 class CalendarDates {
   async getDates(date) {
-    let result = [];
-
-    const prevMonthDates = getPreviousDates(date).map(date => ({
-      date,
-      type: monthTypes.PREVIOUS
-    }));
-    const currMonthDates = getCurrentDates(date).map(date => ({
-      date,
-      type: monthTypes.CURRENT
-    }));
-    result = result.concat(prevMonthDates).concat(currMonthDates);
-
-    const nextMonthDates = getNextDates(date, result.length).map(date => ({
-      date,
-      type: monthTypes.NEXT
-    }));
-    result = result.concat(nextMonthDates);
-
-    return result;
+    return getDatesWithMetadata(date).map(metadata => metadata);
   }
 
   async getMatrix(date) {
@@ -40,24 +22,6 @@ class CalendarDates {
       []
     );
   }
-}
-
-function getDateMatrix(date) {
-  const dates = getDates(date);
-  const daysInAWeek = 7; // 7 days in a week.
-
-  // https://stackoverflow.com/a/39838921/4035
-  return dates.reduce(
-    (rows, key, index) =>
-      (index % daysInAWeek === 0
-        ? rows.push([key])
-        : rows[rows.length - 1].push(key)) && rows,
-    []
-  );
-}
-
-function getDates(date) {
-  return getDatesWithMetadata(date).map(metadata => metadata.date);
 }
 
 function getDatesWithMetadata(date) {
