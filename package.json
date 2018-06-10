@@ -10,9 +10,7 @@
     "build": "rollup -c",
     "test": "yarn build && jest"
   },
-  "dependencies": {
-    "babel-runtime": "^6.26.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^22.4.3",

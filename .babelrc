@@ -9,7 +9,7 @@
       {
         "helpers": false,
         "polyfill": false,
-        "regenerator": true,
+        "regenerator": false,
         "moduleName": "rollup-regenerator-runtime"
       }
     ]
