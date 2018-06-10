@@ -6,11 +6,12 @@ const monthTypes = {
 
 class CalendarDates {
   async getDates(date) {
-    return getDatesWithMetadata(date).map(metadata => metadata);
+    const dates = await getDatesWithMetadata(date);
+    return dates.map(metadata => metadata);
   }
 
   async getMatrix(date) {
-    const dates = getDatesWithMetadata(date);
+    const dates = await getDatesWithMetadata(date);
     const daysInAWeek = 7; // 7 days in a week.
 
     // https://stackoverflow.com/a/39838921/4035
@@ -24,7 +25,7 @@ class CalendarDates {
   }
 }
 
-function getDatesWithMetadata(date) {
+async function getDatesWithMetadata(date) {
   let result = [];
 
   const prevMonthDates = getPreviousDates(date).map(date => ({
