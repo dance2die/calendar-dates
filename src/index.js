@@ -108,19 +108,11 @@ function getDatesWithMetadata(date) {
   return result;
 }
 
-async function getDatesWithMetadataAsync(date) {
-  return getDatesWithMetadata(date);
-}
-
 function getCurrentDates(date) {
   const lastDate = getLastDate(date);
   return Array(lastDate)
     .fill()
     .map((_, i) => i + 1);
-}
-
-async function getCurrentDatesAsync(date) {
-  return getCurrentDates(date);
 }
 
 function getPreviousDates(date) {
@@ -139,10 +131,6 @@ function getPreviousDates(date) {
     .map((_, i) => start + i);
 }
 
-async function getPreviousDatesAsync(date) {
-  return getPreviousDates(date);
-}
-
 function getNextDates(date, daysSoFar) {
   // 7 days * 6 rows (in a calendar)
   const totalDays = 42; // not the answer to all questions.
@@ -150,10 +138,6 @@ function getNextDates(date, daysSoFar) {
   return Array(length)
     .fill()
     .map((_, i) => i + 1);
-}
-
-async function getNextDatesAsync(date, daysSoFar) {
-  return getNextDates(date, daysSoFar);
 }
 
 function getLastDate(date) {
