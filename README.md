@@ -17,7 +17,7 @@ yarn add calendar-dates
 
 ## How to use it
 
-Full [documentation](http://sungkim.co/calendar-dates/).
+Full [documentation](https://dance2die.github.io/calendar-dates/).
 
 ## Change Log
 
