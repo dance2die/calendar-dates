@@ -4,6 +4,19 @@ const monthTypes = {
   NEXT: "next"
 };
 
+function pad(number) {
+  if (number < 10) {
+    return "0" + number;
+  }
+  return number;
+}
+
+function iso8601(date) {
+  return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(
+    date.getUTCDate()
+  )}`;
+}
+
 class CalendarDates {
   getDates(date) {
     return new Promise(resolve =>
@@ -39,20 +52,25 @@ function getDatesWithMetadata(date) {
   return new Promise(resolve => {
     let result = [];
 
-    const previousDates = getPreviousDates(date).map(date => ({
+    const previousDates = getPreviousDates(date).map(({ date, iso }) => ({
       date,
+      iso,
       type: monthTypes.PREVIOUS
     }));
-    const currentDates = getCurrentDates(date).map(date => ({
+    const currentDates = getCurrentDates(date).map(({ date, iso }) => ({
       date,
+      iso,
       type: monthTypes.CURRENT
     }));
     result = result.concat(previousDates).concat(currentDates);
 
-    const nextDates = getNextDates(date, result.length).map(date => ({
-      date,
-      type: monthTypes.NEXT
-    }));
+    const nextDates = getNextDates(date, result.length).map(
+      ({ date, iso }) => ({
+        date,
+        iso,
+        type: monthTypes.NEXT
+      })
+    );
 
     resolve(result.concat(nextDates));
   });
@@ -62,7 +80,7 @@ function getCurrentDates(date) {
   const lastDate = getLastDate(date);
   return Array(lastDate)
     .fill()
-    .map((_, i) => i + 1);
+    .map((_, i) => ({ date: i + 1, iso: iso8601(date) }));
 }
 
 function getPreviousDates(date) {
@@ -78,7 +96,10 @@ function getPreviousDates(date) {
 
   return Array(length)
     .fill()
-    .map((_, i) => start + i);
+    .map((_, i) => ({
+      date: start + i,
+      iso: iso8601(date)
+    }));
 }
 
 function getNextDates(date, daysSoFar) {
@@ -87,7 +108,10 @@ function getNextDates(date, daysSoFar) {
   const length = totalDays - daysSoFar;
   return Array(length)
     .fill()
-    .map((_, i) => i + 1);
+    .map((_, i) => ({
+      date: i + 1,
+      iso: iso8601(date)
+    }));
 }
 
 function getLastDate(date) {
