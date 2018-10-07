@@ -21,6 +21,11 @@ Full [documentation](https://dance2die.github.io/calendar-dates/).
 
 ## Change Log
 
+2.3.0
+1. Returns [ISO8601 date](https://github.com/dance2die/calendar-dates/pull/19).
+    * Thank you [ewolfe](https://github.com/ewolfe) 🙌.
+1. Removed `package-lock.json`, which was accidentally added by using `npm` instead of `yarn`.
+
 2.0.0
 Removed all methods except two methods, which return a promise.
 
