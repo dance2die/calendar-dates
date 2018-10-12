@@ -11,10 +11,14 @@ function pad(number) {
   return number;
 }
 
-function iso8601(date) {
-  return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(
-    date.getUTCDate()
-  )}`;
+function iso8601({ year, month, monthOffset, date }) {
+  const offset = {
+    current: 0,
+    previous: -1,
+    next: 1
+  };
+
+  return `${year}-${pad(month + 1 + offset[monthOffset])}-${pad(date)}`;
 }
 
 class CalendarDates {
@@ -80,7 +84,15 @@ function getCurrentDates(date) {
   const lastDate = getLastDate(date);
   return Array(lastDate)
     .fill()
-    .map((_, i) => ({ date: i + 1, iso: iso8601(date) }));
+    .map((_, i) => ({
+      date: i + 1,
+      iso: iso8601({
+        year: date.getUTCFullYear(),
+        month: date.getUTCMonth(),
+        monthOffset: "current",
+        date: i + 1
+      })
+    }));
 }
 
 function getPreviousDates(date) {
@@ -98,7 +110,12 @@ function getPreviousDates(date) {
     .fill()
     .map((_, i) => ({
       date: start + i,
-      iso: iso8601(date)
+      iso: iso8601({
+        year: date.getUTCFullYear(),
+        month: date.getUTCMonth(),
+        monthOffset: "previous",
+        date: start + i
+      })
     }));
 }
 
@@ -110,7 +127,12 @@ function getNextDates(date, daysSoFar) {
     .fill()
     .map((_, i) => ({
       date: i + 1,
-      iso: iso8601(date)
+      iso: iso8601({
+        year: date.getUTCFullYear(),
+        month: date.getUTCMonth(),
+        monthOffset: "next",
+        date: i + 1
+      })
     }));
 }
 
