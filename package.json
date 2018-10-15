@@ -46,5 +46,12 @@
   "bugs": {
     "url": "https://github.com/dance2die/calendar-dates/issues"
   },
-  "homepage": "https://github.com/dance2die/calendar-dates#readme"
+  "homepage": "https://github.com/dance2die/calendar-dates#readme",
+  "contributors": [
+    {
+      "name": "ewolfe",
+      "email": "e@ewolfe.me",
+      "url": "https://medium.com/@ewolfe"
+    }
+  ]
 }
