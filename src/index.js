@@ -1,25 +1,10 @@
+import { iso8601 } from "./dateutil";
+
 const monthTypes = {
   PREVIOUS: "previous",
   CURRENT: "current",
   NEXT: "next"
 };
-
-function pad(number) {
-  if (number < 10) {
-    return "0" + number;
-  }
-  return number;
-}
-
-function iso8601({ year, month, monthOffset, date }) {
-  const offset = {
-    current: 0,
-    previous: -1,
-    next: 1
-  };
-
-  return `${year}-${pad(month + 1 + offset[monthOffset])}-${pad(date)}`;
-}
 
 class CalendarDates {
   getDates(date) {
