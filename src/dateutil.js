@@ -29,31 +29,27 @@ const getFirstDayIndex = date => {
 };
 
 const getDatesWithMetadata = date => {
-  return new Promise(resolve => {
-    let result = [];
+  let result = [];
 
-    const previousDates = getPreviousDates(date).map(({ date, iso }) => ({
-      date,
-      iso,
-      type: monthTypes.PREVIOUS
-    }));
-    const currentDates = getCurrentDates(date).map(({ date, iso }) => ({
-      date,
-      iso,
-      type: monthTypes.CURRENT
-    }));
-    result = result.concat(previousDates).concat(currentDates);
+  const previousDates = getPreviousDates(date).map(({ date, iso }) => ({
+    date,
+    iso,
+    type: monthTypes.PREVIOUS
+  }));
+  const currentDates = getCurrentDates(date).map(({ date, iso }) => ({
+    date,
+    iso,
+    type: monthTypes.CURRENT
+  }));
+  result = result.concat(previousDates).concat(currentDates);
 
-    const nextDates = getNextDates(date, result.length).map(
-      ({ date, iso }) => ({
-        date,
-        iso,
-        type: monthTypes.NEXT
-      })
-    );
+  const nextDates = getNextDates(date, result.length).map(({ date, iso }) => ({
+    date,
+    iso,
+    type: monthTypes.NEXT
+  }));
 
-    resolve(result.concat(nextDates));
-  });
+  return result.concat(nextDates);
 };
 
 const getCurrentDates = date => {

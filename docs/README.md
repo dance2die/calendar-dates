@@ -2,7 +2,7 @@
 
 ## What is this?
 
-Get a list of calendar dates.  
+Get a list of calendar dates.
 **without an External Dependency**
 
 You can use this to create your own calendar controls
@@ -41,8 +41,8 @@ const log = console.log;
 const may2018 = new Date(2018, 4);
 
 mainAsync = async () => {
-  const mayDates = await calendarDates.getDates(may2018);
-  const mayMatrix = await calendarDates.getMatrix(may2018);
+  const mayDates = calendarDates.getDates(may2018);
+  const mayMatrix = calendarDates.getMatrix(may2018);
   log(`May, 2018 Dates`, mayDates);
   log(`May, 2018 Matrix`, mayMatrix);
 };
@@ -119,11 +119,11 @@ import CalendarDates from "calendar-dates";
 const calendarDates = new CalendarDates();
 
 const main = async () => {
-  for (const meta of await calendarDates.getDates(new Date())) {
+  for (const meta of calendarDates.getDates(new Date())) {
     console.log(meta);
   }
 
-  for (const meta of await calendarDates.getMatrix(new Date())) {
+  for (const meta of calendarDates.getMatrix(new Date())) {
     console.log(meta);
   }
 };
@@ -163,6 +163,9 @@ Array(7) [ {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
 
 ## Change Log
 
+3.0.0
+Converted all methods to be synchronous
+
 2.0.0
 Removed all methods except two methods, which return a promise.
 
@@ -178,13 +181,13 @@ Following methods are removed
 1.  getMatrixWithMetadata
 1.  getMatrixWithMetadataAsync
 
-1.1.2  
+1.1.2
 Updated README to include `*WithMetadata` examples
 
-1.1.1  
+1.1.1
 Fixed runtimeGenerator issue
 
-1.1.0  
+1.1.0
 Added `*WithMetadata` methods
 
 1.0.0
@@ -192,5 +195,5 @@ Added "\*Async" versions
 
 ## License
 
-[MIT](https://github.com/dance2die/calendar-dates/blob/master/LICENSE)  
+[MIT](https://github.com/dance2die/calendar-dates/blob/master/LICENSE)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdance2die%2Fcalendar-dates?ref=badge_large)

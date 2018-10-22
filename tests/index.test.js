@@ -51,9 +51,8 @@ test("Dates with Metadata for April of 2018", () => {
     { date: 12, iso: "2018-05-12", type: "next" }
   ];
 
-  return sut
-    .getDates(april2018)
-    .then(actual => expect(actual).toEqual(expected));
+  const actual = sut.getDates(april2018);
+  expect(actual).toEqual(expected);
 });
 
 test("Dates with Metadata for May of 2018", () => {
@@ -102,7 +101,8 @@ test("Dates with Metadata for May of 2018", () => {
     { date: 9, iso: "2018-06-09", type: "next" }
   ];
 
-  return sut.getDates(may2018).then(actual => expect(actual).toEqual(expected));
+  const actual = sut.getDates(may2018);
+  expect(actual).toEqual(expected);
 });
 
 test("Date Matrix with Metadata for April of 2018", () => {
@@ -163,9 +163,8 @@ test("Date Matrix with Metadata for April of 2018", () => {
     ]
   ];
 
-  return sut
-    .getMatrix(april2018)
-    .then(actual => expect(actual).toEqual(expected));
+  const actual = sut.getMatrix(april2018);
+  expect(actual).toEqual(expected);
 });
 
 test("Date Matrix with Metadata for May of 2018", () => {
@@ -226,7 +225,6 @@ test("Date Matrix with Metadata for May of 2018", () => {
     ]
   ];
 
-  return sut
-    .getMatrix(may2018)
-    .then(actual => expect(actual).toEqual(expected));
+  const actual = sut.getMatrix(may2018);
+  expect(actual).toEqual(expected);
 });
