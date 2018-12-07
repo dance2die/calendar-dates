@@ -14,7 +14,10 @@ const iso8601 = ({ year, month, monthOffset, date }) => {
     next: 1
   };
 
-  return `${year}-${pad(month + 1 + offset[monthOffset])}-${pad(date)}`;
+  let isoMonth = month + 1 + offset[monthOffset];
+  if (isoMonth > 12) isoMonth %= 12;
+
+  return `${year}-${pad(isoMonth)}-${pad(date)}`;
 };
 
 const getLastDate = date =>
