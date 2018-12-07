@@ -5,8 +5,121 @@ const sut = new CalendarDates();
 const april2018 = new Date(2018, 3);
 const may2018 = new Date(2018, 4);
 const december2018 = new Date(2018, 11);
+const january2019 = new Date(2019, 0);
 
-test("Next year's month should be 1 not 13", () => {
+test("Previous year's December ISO month should be 12 not 0", () => {
+  const expected = [
+    { date: 30, iso: "2019-00-30", type: "previous" },
+    { date: 31, iso: "2019-00-31", type: "previous" },
+    { date: 1, iso: "2019-01-01", type: "current" },
+    { date: 2, iso: "2019-01-02", type: "current" },
+    { date: 3, iso: "2019-01-03", type: "current" },
+    { date: 4, iso: "2019-01-04", type: "current" },
+    { date: 5, iso: "2019-01-05", type: "current" },
+    { date: 6, iso: "2019-01-06", type: "current" },
+    { date: 7, iso: "2019-01-07", type: "current" },
+    { date: 8, iso: "2019-01-08", type: "current" },
+    { date: 9, iso: "2019-01-09", type: "current" },
+    { date: 10, iso: "2019-01-10", type: "current" },
+    { date: 11, iso: "2019-01-11", type: "current" },
+    { date: 12, iso: "2019-01-12", type: "current" },
+    { date: 13, iso: "2019-01-13", type: "current" },
+    { date: 14, iso: "2019-01-14", type: "current" },
+    { date: 15, iso: "2019-01-15", type: "current" },
+    { date: 16, iso: "2019-01-16", type: "current" },
+    { date: 17, iso: "2019-01-17", type: "current" },
+    { date: 18, iso: "2019-01-18", type: "current" },
+    { date: 19, iso: "2019-01-19", type: "current" },
+    { date: 20, iso: "2019-01-20", type: "current" },
+    { date: 21, iso: "2019-01-21", type: "current" },
+    { date: 22, iso: "2019-01-22", type: "current" },
+    { date: 23, iso: "2019-01-23", type: "current" },
+    { date: 24, iso: "2019-01-24", type: "current" },
+    { date: 25, iso: "2019-01-25", type: "current" },
+    { date: 26, iso: "2019-01-26", type: "current" },
+    { date: 27, iso: "2019-01-27", type: "current" },
+    { date: 28, iso: "2019-01-28", type: "current" },
+    { date: 29, iso: "2019-01-29", type: "current" },
+    { date: 30, iso: "2019-01-30", type: "current" },
+    { date: 31, iso: "2019-01-31", type: "current" },
+    { date: 1, iso: "2019-02-01", type: "next" },
+    { date: 2, iso: "2019-02-02", type: "next" },
+    { date: 3, iso: "2019-02-03", type: "next" },
+    { date: 4, iso: "2019-02-04", type: "next" },
+    { date: 5, iso: "2019-02-05", type: "next" },
+    { date: 6, iso: "2019-02-06", type: "next" },
+    { date: 7, iso: "2019-02-07", type: "next" },
+    { date: 8, iso: "2019-02-08", type: "next" },
+    { date: 9, iso: "2019-02-09", type: "next" }
+  ];
+  return sut
+    .getDates(january2019)
+    .then(actual => expect(actual).toEqual(expected));
+});
+
+test("Previous year's matrix December ISO month should be 12 not 0", () => {
+  const expected = [
+    [
+      { date: 30, iso: "2019-00-30", type: "previous" },
+      { date: 31, iso: "2019-00-31", type: "previous" },
+      { date: 1, iso: "2019-01-01", type: "current" },
+      { date: 2, iso: "2019-01-02", type: "current" },
+      { date: 3, iso: "2019-01-03", type: "current" },
+      { date: 4, iso: "2019-01-04", type: "current" },
+      { date: 5, iso: "2019-01-05", type: "current" }
+    ],
+    [
+      { date: 6, iso: "2019-01-06", type: "current" },
+      { date: 7, iso: "2019-01-07", type: "current" },
+      { date: 8, iso: "2019-01-08", type: "current" },
+      { date: 9, iso: "2019-01-09", type: "current" },
+      { date: 10, iso: "2019-01-10", type: "current" },
+      { date: 11, iso: "2019-01-11", type: "current" },
+      { date: 12, iso: "2019-01-12", type: "current" }
+    ],
+    [
+      { date: 13, iso: "2019-01-13", type: "current" },
+      { date: 14, iso: "2019-01-14", type: "current" },
+      { date: 15, iso: "2019-01-15", type: "current" },
+      { date: 16, iso: "2019-01-16", type: "current" },
+      { date: 17, iso: "2019-01-17", type: "current" },
+      { date: 18, iso: "2019-01-18", type: "current" },
+      { date: 19, iso: "2019-01-19", type: "current" }
+    ],
+    [
+      { date: 20, iso: "2019-01-20", type: "current" },
+      { date: 21, iso: "2019-01-21", type: "current" },
+      { date: 22, iso: "2019-01-22", type: "current" },
+      { date: 23, iso: "2019-01-23", type: "current" },
+      { date: 24, iso: "2019-01-24", type: "current" },
+      { date: 25, iso: "2019-01-25", type: "current" },
+      { date: 26, iso: "2019-01-26", type: "current" }
+    ],
+    [
+      { date: 27, iso: "2019-01-27", type: "current" },
+      { date: 28, iso: "2019-01-28", type: "current" },
+      { date: 29, iso: "2019-01-29", type: "current" },
+      { date: 30, iso: "2019-01-30", type: "current" },
+      { date: 31, iso: "2019-01-31", type: "current" },
+      { date: 1, iso: "2019-02-01", type: "next" },
+      { date: 2, iso: "2019-02-02", type: "next" }
+    ],
+    [
+      { date: 3, iso: "2019-02-03", type: "next" },
+      { date: 4, iso: "2019-02-04", type: "next" },
+      { date: 5, iso: "2019-02-05", type: "next" },
+      { date: 6, iso: "2019-02-06", type: "next" },
+      { date: 7, iso: "2019-02-07", type: "next" },
+      { date: 8, iso: "2019-02-08", type: "next" },
+      { date: 9, iso: "2019-02-09", type: "next" }
+    ]
+  ];
+  return sut
+    .getMatrix(january2019)
+    .then(actual => expect(actual).toEqual(expected));
+});
+
+test("Next year's January should be 1 not 13", () => {
   const expected = [
     { date: 25, iso: "2018-11-25", type: "previous" },
     { date: 26, iso: "2018-11-26", type: "previous" },
@@ -56,7 +169,7 @@ test("Next year's month should be 1 not 13", () => {
     .then(actual => expect(actual).toEqual(expected));
 });
 
-test("Next year's matrix month should be 1 not 13", () => {
+test("Next year's matrix January should be 1 not 13", () => {
   const expected = [
     [
       { date: 25, iso: "2018-11-25", type: "previous" },

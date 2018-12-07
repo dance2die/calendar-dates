@@ -16,6 +16,7 @@ const iso8601 = ({ year, month, monthOffset, date }) => {
 
   let isoMonth = month + 1 + offset[monthOffset];
   if (isoMonth > 12) isoMonth %= 12;
+  else if (isoMonth < 1) isoMonth = 0;
 
   return `${year}-${pad(isoMonth)}-${pad(date)}`;
 };
