@@ -9,8 +9,8 @@ const january2019 = new Date(2019, 0);
 
 test("Previous year's December ISO month should be 12 not 0", () => {
   const expected = [
-    { date: 30, iso: "2019-00-30", type: "previous" },
-    { date: 31, iso: "2019-00-31", type: "previous" },
+    { date: 30, iso: "2018-12-30", type: "previous" },
+    { date: 31, iso: "2018-12-31", type: "previous" },
     { date: 1, iso: "2019-01-01", type: "current" },
     { date: 2, iso: "2019-01-02", type: "current" },
     { date: 3, iso: "2019-01-03", type: "current" },
@@ -60,8 +60,8 @@ test("Previous year's December ISO month should be 12 not 0", () => {
 test("Previous year's matrix December ISO month should be 12 not 0", () => {
   const expected = [
     [
-      { date: 30, iso: "2019-00-30", type: "previous" },
-      { date: 31, iso: "2019-00-31", type: "previous" },
+      { date: 30, iso: "2018-12-30", type: "previous" },
+      { date: 31, iso: "2018-12-31", type: "previous" },
       { date: 1, iso: "2019-01-01", type: "current" },
       { date: 2, iso: "2019-01-02", type: "current" },
       { date: 3, iso: "2019-01-03", type: "current" },
@@ -158,11 +158,11 @@ test("Next year's January should be 1 not 13", () => {
     { date: 29, iso: "2018-12-29", type: "current" },
     { date: 30, iso: "2018-12-30", type: "current" },
     { date: 31, iso: "2018-12-31", type: "current" },
-    { date: 1, iso: "2018-01-01", type: "next" },
-    { date: 2, iso: "2018-01-02", type: "next" },
-    { date: 3, iso: "2018-01-03", type: "next" },
-    { date: 4, iso: "2018-01-04", type: "next" },
-    { date: 5, iso: "2018-01-05", type: "next" }
+    { date: 1, iso: "2019-01-01", type: "next" },
+    { date: 2, iso: "2019-01-02", type: "next" },
+    { date: 3, iso: "2019-01-03", type: "next" },
+    { date: 4, iso: "2019-01-04", type: "next" },
+    { date: 5, iso: "2019-01-05", type: "next" }
   ];
   return sut
     .getDates(december2018)
@@ -219,11 +219,11 @@ test("Next year's matrix January should be 1 not 13", () => {
     [
       { date: 30, iso: "2018-12-30", type: "current" },
       { date: 31, iso: "2018-12-31", type: "current" },
-      { date: 1, iso: "2018-01-01", type: "next" },
-      { date: 2, iso: "2018-01-02", type: "next" },
-      { date: 3, iso: "2018-01-03", type: "next" },
-      { date: 4, iso: "2018-01-04", type: "next" },
-      { date: 5, iso: "2018-01-05", type: "next" }
+      { date: 1, iso: "2019-01-01", type: "next" },
+      { date: 2, iso: "2019-01-02", type: "next" },
+      { date: 3, iso: "2019-01-03", type: "next" },
+      { date: 4, iso: "2019-01-04", type: "next" },
+      { date: 5, iso: "2019-01-05", type: "next" }
     ]
   ];
   return sut
