@@ -7,19 +7,8 @@ const monthTypes = {
 const pad = (number, padCharacter = "0") =>
   number < 10 ? padCharacter + number : number;
 
-const iso8601 = ({ year, month, monthOffset, date }) => {
-  const offset = {
-    current: 0,
-    previous: -1,
-    next: 1
-  };
-
-  let isoMonth = month + 1 + offset[monthOffset];
-  if (isoMonth > 12) isoMonth %= 12;
-  else if (isoMonth < 1) isoMonth = 0;
-
-  return `${year}-${pad(isoMonth)}-${pad(date)}`;
-};
+const iso8601 = date =>
+  `${date.getFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getDate())}`;
 
 const getLastDate = date =>
   new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -60,60 +49,64 @@ const getDatesWithMetadata = date => {
   });
 };
 
-const getCurrentDates = date => {
-  const lastDate = getLastDate(date);
+const getCurrentDates = currentDate => {
+  const lastDate = getLastDate(currentDate);
   return Array(lastDate)
     .fill()
-    .map((_, i) => ({
-      date: i + 1,
-      iso: iso8601({
-        year: date.getUTCFullYear(),
-        month: date.getUTCMonth(),
-        monthOffset: "current",
-        date: i + 1
-      })
-    }));
+    .map((_, i) => {
+      const date = i + 1;
+      currentDate.setDate(date);
+      return {
+        date,
+        iso: iso8601(currentDate)
+      };
+    });
 };
 
-const getPreviousDates = date => {
-  const month = date.getMonth();
-  const year = date.getFullYear();
+const getPreviousDates = currentDate => {
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
   const prevMonth = Math.min(month - 1, 11);
   const prevDate = new Date(year, prevMonth);
 
   const prevMonthLastDate = getLastDate(prevDate);
-  const firstDayIndex = getFirstDayIndex(date);
+  const firstDayIndex = getFirstDayIndex(currentDate);
   const start = prevMonthLastDate - firstDayIndex + 1;
   const length = prevMonthLastDate - start + 1;
 
   return Array(length)
     .fill()
-    .map((_, i) => ({
-      date: start + i,
-      iso: iso8601({
-        year: date.getUTCFullYear(),
-        month: date.getUTCMonth(),
-        monthOffset: "previous",
-        date: start + i
-      })
-    }));
+    .map((_, i) => {
+      const date = start + i;
+      prevDate.setDate(date);
+      return {
+        date,
+        iso: iso8601(prevDate)
+      };
+    });
 };
 
-const getNextDates = (date, daysSoFar) => {
+const getNextDates = (currentDate, daysSoFar) => {
   // 7 days * 6 rows (in a calendar)
   const totalDays = 42; // not the answer to all questions.
   const length = totalDays - daysSoFar;
+
+  const nextMonth =
+    currentDate.getMonth() + 1 === 12 ? 0 : currentDate.getMonth() + 1;
+  let nextYear =
+    nextMonth === 0 ? currentDate.getFullYear() + 1 : currentDate.getFullYear();
+  const nextDate = new Date(nextYear, nextMonth);
+
   return Array(length)
     .fill()
-    .map((_, i) => ({
-      date: i + 1,
-      iso: iso8601({
-        year: date.getUTCFullYear(),
-        month: date.getUTCMonth(),
-        monthOffset: "next",
-        date: i + 1
-      })
-    }));
+    .map((_, i) => {
+      const date = i + 1;
+      nextDate.setDate(date);
+      return {
+        date,
+        iso: iso8601(nextDate)
+      };
+    });
 };
 
 export {
