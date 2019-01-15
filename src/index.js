@@ -57,6 +57,7 @@ function getDatesWithMetadata(date) {
       iso,
       type: monthTypes.PREVIOUS
     }));
+
     const currentDates = getCurrentDates(date).map(({ date, iso }) => ({
       date,
       iso,
@@ -77,10 +78,13 @@ function getDatesWithMetadata(date) {
 }
 
 function getCurrentDates(date) {
-  const lastDate = getLastDate(date);
+  const lastDate = getLastDateOfMonth(date);
   return Array(lastDate)
     .fill()
-    .map((_, i) => ({ date: i + 1, iso: iso8601(date) }));
+    .map((_, i) => {
+      date.setDate(i + 1);
+      return { date: i + 1, iso: iso8601(date) };
+    });
 }
 
 function getPreviousDates(date) {
@@ -89,32 +93,43 @@ function getPreviousDates(date) {
   const prevMonth = Math.min(month - 1, 11);
   const prevDate = new Date(year, prevMonth);
 
-  const prevMonthLastDate = getLastDate(prevDate);
+  const prevMonthLastDate = getLastDateOfMonth(prevDate);
   const firstDayIndex = getFirstDayIndex(date);
   const start = prevMonthLastDate - firstDayIndex + 1;
   const length = prevMonthLastDate - start + 1;
 
   return Array(length)
     .fill()
-    .map((_, i) => ({
-      date: start + i,
-      iso: iso8601(date)
-    }));
+    .map((_, i) => {
+      prevDate.setDate(start + i);
+      return {
+        date: start + i,
+        iso: iso8601(prevDate)
+      };
+    });
 }
 
 function getNextDates(date, daysSoFar) {
   // 7 days * 6 rows (in a calendar)
   const totalDays = 42; // not the answer to all questions.
   const length = totalDays - daysSoFar;
+
+  const nextMonth = date.getMonth() + 1 === 12 ? 0 : date.getMonth() + 1;
+  let nextYear = nextMonth === 0 ? date.getFullYear() + 1 : date.getFullYear();
+  const nextDate = new Date(nextYear, nextMonth);
+
   return Array(length)
     .fill()
-    .map((_, i) => ({
-      date: i + 1,
-      iso: iso8601(date)
-    }));
+    .map((_, i) => {
+      nextDate.setDate(i + 1);
+      return {
+        date: i + 1,
+        iso: iso8601(nextDate)
+      };
+    });
 }
 
-function getLastDate(date) {
+function getLastDateOfMonth(date) {
   return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
