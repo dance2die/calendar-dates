@@ -21,6 +21,12 @@ Full [documentation](https://dance2die.github.io/calendar-dates/).
 
 ## Change Log
 
+### 2.5.1
+Fix data for December and January dates #33 by [ewolfe](https://github.com/ewolfe).
+Decided to bump up the minor as it was a significant bug fix.
+
+Decision based on [React team's decision](https://reactjs.org/blog/2018/12/19/react-v-16-7.html#why-is-this-bugfix-a-minor-instead-of-a-patch) (even though this is not a React component) on releasing v16.7 not including Hooks.
+
 ### 2.4.0  
 Fixed [ISO8601 date](https://github.com/dance2die/calendar-dates/pull/21) return value to match current date.  
 * Thank you again [ewolfe](https://github.com/ewolfe) 👊.
