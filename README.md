@@ -1,9 +1,8 @@
 [![NPM](https://nodei.co/npm/calendar-dates.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/calendar-dates/)
 
-## ❓ What is this?
+## calendar-dates
 
-Get a list of calendar dates.  
-**without an External Dependency**
+📆 Get a list of calendar dates with **no external dependencies**.
 
 You can use this to create your own calendar controls
 
