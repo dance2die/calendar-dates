@@ -19,6 +19,16 @@
         "design",
         "test"
       ]
+    },
+    {
+      "login": "ewolfe",
+      "name": "ewolfe",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/32533397?v=4",
+      "profile": "https://medium.com/@ewolfe",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
