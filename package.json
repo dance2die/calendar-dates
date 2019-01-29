@@ -23,7 +23,7 @@
     "eslint-plugin-react": "7.9.1",
     "jest": "22.4.3",
     "regenerator-runtime": "0.11.1",
-    "rollup": "0.66.4",
+    "rollup": "0.68.2",
     "rollup-plugin-babel": "3.0.3",
     "rollup-plugin-commonjs": "9.1.0",
     "rollup-plugin-node-resolve": "3.3.0",
