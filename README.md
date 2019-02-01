@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/calendar-dates.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/calendar-dates/)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 ![Minzipped Size](https://img.shields.io/bundlephobia/minzip/calendar-dates.svg?style=flat)
 ![Minified Size](https://img.shields.io/bundlephobia/min/calendar-dates.svg?style=flat)
 ![circleci build](https://img.shields.io/circleci/project/github/dance2die/calendar-dates.svg?style=flat)
@@ -79,8 +79,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/8465237?v=4" width="100px;" alt="Sung Kim"/><br /><sub><b>Sung Kim</b></sub>](https://twitter.com/dance2die)<br />[💻](https://github.com/dance2die/calendar-dates/commits?author=dance2die "Code") [🎨](#design-dance2die "Design") [⚠️](https://github.com/dance2die/calendar-dates/commits?author=dance2die "Tests") | [<img src="https://avatars2.githubusercontent.com/u/32533397?v=4" width="100px;" alt="ewolfe"/><br /><sub><b>ewolfe</b></sub>](https://medium.com/@ewolfe)<br />[💻](https://github.com/dance2die/calendar-dates/commits?author=ewolfe "Code") [⚠️](https://github.com/dance2die/calendar-dates/commits?author=ewolfe "Tests") |
-| :---: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/8465237?v=4" width="100px;" alt="Sung Kim"/><br /><sub><b>Sung Kim</b></sub>](https://twitter.com/dance2die)<br />[💻](https://github.com/dance2die/calendar-dates/commits?author=dance2die "Code") [🎨](#design-dance2die "Design") [⚠️](https://github.com/dance2die/calendar-dates/commits?author=dance2die "Tests") | [<img src="https://avatars2.githubusercontent.com/u/32533397?v=4" width="100px;" alt="ewolfe"/><br /><sub><b>ewolfe</b></sub>](https://medium.com/@ewolfe)<br />[💻](https://github.com/dance2die/calendar-dates/commits?author=ewolfe "Code") [⚠️](https://github.com/dance2die/calendar-dates/commits?author=ewolfe "Tests") | [<img src="https://avatars0.githubusercontent.com/u/6683520?v=4" width="100px;" alt="Dave Follett"/><br /><sub><b>Dave Follett</b></sub>](https://davefollett.io)<br />[📖](https://github.com/dance2die/calendar-dates/commits?author=davefollett "Documentation") |
+| :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
