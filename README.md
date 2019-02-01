@@ -5,6 +5,7 @@
 ![Minified Size](https://img.shields.io/bundlephobia/min/calendar-dates.svg?style=flat)
 ![circleci build](https://img.shields.io/circleci/project/github/dance2die/calendar-dates.svg?style=flat)
 ![downloads](https://img.shields.io/npm/dt/calendar-dates.svg?style=flat)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1e673aa4287e0e938a90/maintainability)](https://codeclimate.com/github/dance2die/calendar-dates/maintainability)
 
 ## calendar-dates
 
