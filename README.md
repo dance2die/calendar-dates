@@ -1,5 +1,10 @@
 [![NPM](https://nodei.co/npm/calendar-dates.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/calendar-dates/)
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+![Minzipped Size](https://img.shields.io/bundlephobia/minzip/calendar-dates.svg?style=flat)
+![Minified Size](https://img.shields.io/bundlephobia/min/calendar-dates.svg?style=flat)
+![circleci build](https://img.shields.io/circleci/project/github/dance2die/calendar-dates.svg?style=flat)
+![downloads](https://img.shields.io/npm/dt/calendar-dates.svg?style=flat)
 
 ## calendar-dates
 
