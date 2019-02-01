@@ -49,18 +49,21 @@ const getDatesWithMetadata = date => {
   });
 };
 
+const dateMapper = dateCount => mapper =>
+  Array(dateCount)
+    .fill()
+    .map(mapper);
+
 const getCurrentDates = currentDate => {
   const lastDate = getLastDate(currentDate);
-  return Array(lastDate)
-    .fill()
-    .map((_, i) => {
-      const date = i + 1;
-      currentDate.setDate(date);
-      return {
-        date,
-        iso: iso8601(currentDate)
-      };
-    });
+  return dateMapper(lastDate)((_, i) => {
+    const date = i + 1;
+    currentDate.setDate(date);
+    return {
+      date,
+      iso: iso8601(currentDate)
+    };
+  });
 };
 
 const getPreviousDates = currentDate => {
@@ -74,16 +77,14 @@ const getPreviousDates = currentDate => {
   const start = prevMonthLastDate - firstDayIndex + 1;
   const length = prevMonthLastDate - start + 1;
 
-  return Array(length)
-    .fill()
-    .map((_, i) => {
-      const date = start + i;
-      prevDate.setDate(date);
-      return {
-        date,
-        iso: iso8601(prevDate)
-      };
-    });
+  return dateMapper(length)((_, i) => {
+    const date = start + i;
+    prevDate.setDate(date);
+    return {
+      date,
+      iso: iso8601(prevDate)
+    };
+  });
 };
 
 const getNextDates = (currentDate, daysSoFar) => {
@@ -97,16 +98,14 @@ const getNextDates = (currentDate, daysSoFar) => {
     nextMonth === 0 ? currentDate.getFullYear() + 1 : currentDate.getFullYear();
   const nextDate = new Date(nextYear, nextMonth);
 
-  return Array(length)
-    .fill()
-    .map((_, i) => {
-      const date = i + 1;
-      nextDate.setDate(date);
-      return {
-        date,
-        iso: iso8601(nextDate)
-      };
-    });
+  return dateMapper(length)((_, i) => {
+    const date = i + 1;
+    nextDate.setDate(date);
+    return {
+      date,
+      iso: iso8601(nextDate)
+    };
+  });
 };
 
 export {
