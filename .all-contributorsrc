@@ -29,6 +29,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "davefollett",
+      "name": "Dave Follett",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6683520?v=4",
+      "profile": "https://davefollett.io",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
