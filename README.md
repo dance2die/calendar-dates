@@ -1,11 +1,12 @@
 [![NPM](https://nodei.co/npm/calendar-dates.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/calendar-dates/)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 ![Minzipped Size](https://img.shields.io/bundlephobia/minzip/calendar-dates.svg?style=flat)
-![Minified Size](https://img.shields.io/bundlephobia/min/calendar-dates.svg?style=flat)
+![Minified Size](https://img.shields.io/bundlephobia/min/calendar-dates.svg?style=flat)  
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 ![circleci build](https://img.shields.io/circleci/project/github/dance2die/calendar-dates.svg?style=flat)
 ![downloads](https://img.shields.io/npm/dt/calendar-dates.svg?style=flat)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1e673aa4287e0e938a90/maintainability)](https://codeclimate.com/github/dance2die/calendar-dates/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1e673aa4287e0e938a90/test_coverage)](https://codeclimate.com/github/dance2die/calendar-dates/test_coverage)
 
 ## calendar-dates
 
