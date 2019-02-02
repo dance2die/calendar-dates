@@ -17,6 +17,8 @@ defaults: &defaults
 jobs:
   test:
     <<: *defaults
+    environment:
+      CC_TEST_REPORTER_ID: 2420308ee56c768dbe30ea49a37ceda26cb7fc53dddf2c64881a87193e87ffa7
     steps:
       - checkout
 
