@@ -32,7 +32,6 @@ jobs:
       - run:
           name: Build production version
           command: yarn build
-
       # https://docs.codeclimate.com/docs/circle-ci-test-coverage-example#section-circleci-20
       - run:
           name: Setup Code Climate test-reporter
@@ -40,7 +39,6 @@ jobs:
           # download test reporter as a static binary
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
       - run:
           name: Run tests
           command: |
