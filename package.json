@@ -33,7 +33,7 @@
     "babel-preset-env": "1.6.1",
     "bundlesize": "0.17.1",
     "eslint": "5.13.0",
-    "eslint-plugin-react": "7.9.1",
+    "eslint-plugin-react": "7.12.4",
     "jest": "22.4.4",
     "regenerator-runtime": "0.11.1",
     "rollup": "1.1.2",
