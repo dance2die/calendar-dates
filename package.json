@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "bundlesize": "bundlesize",
-    "test": "yarn build && bundlesize && jest"
+    "test": "yarn build && bundlesize && jest --coverage"
   },
   "bundlesize": [
     {
@@ -64,6 +64,10 @@
       "name": "ewolfe",
       "email": "e@ewolfe.me",
       "url": "https://medium.com/@ewolfe"
+    },
+    {
+      "name": "davefollett",
+      "url": "https://davefollett.io/"
     }
   ]
 }
