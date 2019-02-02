@@ -47,9 +47,9 @@ jobs:
               # notify Code Climate of a pending test report using `before-build`
               ./cc-test-reporter before-build
               # https://medium.freecodecamp.org/how-to-set-up-continuous-integration-and-deployment-for-your-react-app-d09ae4525250
-              yarn test
+              yarn test:coverage
               # upload test report to Code Climate using `after-build`
-              ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+              ./cc-test-reporter after-build --exit-code $?
 
       - save_cache:
           paths:
