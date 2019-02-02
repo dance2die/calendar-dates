@@ -26,13 +26,30 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run:
+          name: Install NPM libraries
+          command: yarn install
       - run:
           name: Build production version
           command: yarn build
+
+      # https://docs.codeclimate.com/docs/circle-ci-test-coverage-example#section-circleci-20
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+          # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
       - run:
           name: Run tests
-          command: yarn test
+          command: |
+              # notify Code Climate of a pending test report using `before-build`
+              ./cc-test-reporter before-build
+              # https://medium.freecodecamp.org/how-to-set-up-continuous-integration-and-deployment-for-your-react-app-d09ae4525250
+              yarn test
+              # upload test report to Code Climate using `after-build`
+              ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
       - save_cache:
           paths:
