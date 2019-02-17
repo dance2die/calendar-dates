@@ -1,16 +1,15 @@
 {
-  "presets": [["env", { "modules": false }]],
+  "presets": [["@babel/preset-env", { "modules": false }]],
   "plugins": [
-    "external-helpers",
-    "transform-class-properties",
-    "transform-regenerator",
+    "@babel/plugin-external-helpers",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-regenerator",
     [
-      "transform-runtime",
+      "@babel/plugin-transform-runtime",
       {
         "helpers": false,
-        "polyfill": false,
         "regenerator": false,
-        "moduleName": "rollup-regenerator-runtime"
+        "useESModules": false
       }
     ]
   ]
