@@ -1,6 +1,6 @@
 {
   "name": "calendar-dates",
-  "version": "2.5.10",
+  "version": "2.5.11",
   "license": "MIT",
   "author": "Sung Kim",
   "main": "dist/calendardates.cjs.js",
