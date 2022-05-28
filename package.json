@@ -13,6 +13,11 @@
     "test:coverage": "jest --coverage",
     "prepare": "husky install"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "bundlesize": [
     {
       "path": "dist/calendardates.cjs.js",
@@ -31,12 +36,17 @@
     "@babel/plugin-transform-regenerator": "^7.18.0",
     "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
     "babel-jest": "^28.1.0",
     "bundlesize": "^0.18.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "jest": "^28.1.0",
+    "lint-staged": "^12.4.2",
+    "prettier": "^2.6.2",
     "regenerator-runtime": "^0.13.9",
     "rollup": "^2.75.1",
     "rollup-plugin-babel": "^4.3.3",
