@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "bundlesize": "bundlesize",
     "test": "yarn build && bundlesize && jest --coverage",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "bundlesize": [
     {
@@ -22,7 +23,6 @@
       "maxSize": "1 kB"
     }
   ],
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
@@ -35,6 +35,7 @@
     "bundlesize": "^0.18.1",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "regenerator-runtime": "^0.13.9",
     "rollup": "^2.75.1",

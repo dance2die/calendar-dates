@@ -12,6 +12,7 @@ specifiers:
   bundlesize: ^0.18.1
   eslint: ^8.16.0
   eslint-plugin-react: ^7.30.0
+  husky: ^8.0.1
   jest: ^28.1.0
   regenerator-runtime: ^0.13.9
   rollup: ^2.75.1
@@ -32,6 +33,7 @@ devDependencies:
   bundlesize: 0.18.1
   eslint: 8.16.0
   eslint-plugin-react: 7.30.0_eslint@8.16.0
+  husky: 8.0.1
   jest: 28.1.0
   regenerator-runtime: 0.13.9
   rollup: 2.75.1
@@ -2824,6 +2826,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ieee754/1.2.1:
