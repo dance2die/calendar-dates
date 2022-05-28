@@ -11,7 +11,7 @@ defaults: &defaults
   # - image: circleci/mongo:3.4.4
   working_directory: ~/repo
   docker:
-    - image: cimg/node:16.15.0
+    - image: cimg/node:18.2.0
 
 jobs:
   test:
